@@ -1,11 +1,11 @@
-import Homepage from "./components/Homepage/homepage";
+import { Outlet } from "react-router";
 import { Navbar } from "./components/Navbar/navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Homepage />
+      <Outlet />
     </>
   );
 }

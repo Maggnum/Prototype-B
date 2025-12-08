@@ -34,9 +34,9 @@ export const Navbar = () => {
     <AppBar position="sticky" elevation={0} sx={navbarStyle}>
       <Toolbar sx={toolbarStyle}>
         <AdsClickIcon sx={iconStyle} />
-        <Typography variant="h6" component="a" href="#" sx={itemStyle}>
+        <Typography variant="h6" component="a" href="/home" sx={itemStyle}>
           Home
-        </Typography>{" "}
+        </Typography>
       </Toolbar>
     </AppBar>
   );
