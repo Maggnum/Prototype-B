@@ -3,14 +3,15 @@ import EmployeeCard from "./employeeCard";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import type { employee } from "./types";
-
-const employees: employee[] = [];
+import { useLoaderData } from "react-router";
 
 const EmployeesPage: FC = () => {
+  const { employees } = useLoaderData();
+
   return (
     <Container sx={{ py: 4 }}>
       <Grid container spacing={4} justifyContent="center">
-        {employees.map((employee) => (
+        {employees.map((employee: employee) => (
           <EmployeeCard
             id={employee.id}
             firstName={employee.firstName}
