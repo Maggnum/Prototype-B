@@ -24,6 +24,7 @@ const route = {
     {
       path: "/map",
       Component: MapPage,
+      loader: fetchEmployees,
     },
   ],
 };
