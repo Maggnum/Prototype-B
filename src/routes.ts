@@ -11,7 +11,10 @@ const route = {
   path: "/",
   Component: App,
   children: [
-    { index: true, Component: Homepage },
+    {
+      path: "/",
+      Component: Homepage,
+    },
     {
       path: "employees",
       Component: LoadingPage,
@@ -25,14 +28,14 @@ const route = {
       ],
     },
     {
-      path: "/map",
-      Component: MapPage,
+      path: "map",
+      Component: LoadingPage,
       loader: fetchEmployees,
       ErrorBoundary: ErrorPage,
       children: [
         {
           index: true,
-          Component: EmployeesPage,
+          Component: MapPage,
         },
       ],
     },
