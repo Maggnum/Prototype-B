@@ -40,6 +40,9 @@ export const Navbar = () => {
         <Typography variant="h6" component="a" href="/employees" sx={itemStyle}>
           Employees
         </Typography>
+        <Typography variant="h6" component="a" href="/map" sx={itemStyle}>
+          Map
+        </Typography>
       </Toolbar>
     </AppBar>
   );

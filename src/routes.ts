@@ -6,16 +6,24 @@ import Homepage from "./components/Homepage/homepage";
 import App from "./App";
 import EmployeesPage from "./components/EmployeesPage/employeesPage";
 import { fetchEmployees } from "./api";
+import MapPage from "./components/MapPage/mapPage";
 
 const route = {
   path: "/",
   Component: App,
   children: [
-    { path: "/", Component: Homepage },
+    {
+      path: "/",
+      Component: Homepage,
+    },
     {
       path: "/employees",
       Component: EmployeesPage,
       loader: fetchEmployees,
+    },
+    {
+      path: "/map",
+      Component: MapPage,
     },
   ],
 };
