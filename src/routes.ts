@@ -1,25 +1,29 @@
-import {
-  createBrowserRouter,
-  // UNSAFE_WithHydrateFallbackProps,
-} from "react-router";
-import Homepage from "./components/Homepage/homepage";
-import App from "./App";
-import EmployeesPage from "./components/EmployeesPage/employeesPage";
-import { fetchEmployees } from "./api";
+import { createBrowserRouter } from "react-router";
+import { Homepage } from "./components/Homepage/homepage";
+import { App } from "./App";
+import { EmployeesPage } from "./components/EmployeesPage/employeesPage";
+import { fetchEmployees } from "./services";
+import { ErrorPage } from "./components/ErrorPage/errorPage";
+import { LoadingPage } from "./components/LoadingPage copy/loadingPage";
 
 const route = {
   path: "/",
   Component: App,
   children: [
-    { path: "/", Component: Homepage },
+    { index: true, Component: Homepage },
     {
-      path: "/employees",
-      Component: EmployeesPage,
+      path: "employees",
+      Component: LoadingPage,
       loader: fetchEmployees,
+      ErrorBoundary: ErrorPage,
+      children: [
+        {
+          index: true,
+          Component: EmployeesPage,
+        },
+      ],
     },
   ],
 };
 
-const router = createBrowserRouter([route]);
-
-export default router;
+export const router = createBrowserRouter([route]);

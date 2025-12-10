@@ -3,9 +3,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import type { employee } from "./types";
+import type { employee } from "../../modules/employee";
 
-const EmployeeCard: FC<employee> = (employee: employee) => {
+export const EmployeeCard: FC<employee> = (employee: employee) => {
   return (
     <Card
       sx={{
@@ -56,5 +56,3 @@ const EmployeeCard: FC<employee> = (employee: employee) => {
     </Card>
   );
 };
-
-export default EmployeeCard;
