@@ -75,6 +75,7 @@ export const EmployeeCard: FC<employee> = (employee: employee) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   return (
     <>
       {/* CARD */}
