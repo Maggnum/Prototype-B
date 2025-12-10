@@ -15,7 +15,7 @@ const icon = new Icon({
   iconSize: [38, 38],
 });
 
-const MapPage: FC = () => {
+export const MapPage: FC = () => {
   const employees = useLoaderData();
   const { markers } = useEmployeeMarker(employees);
 
@@ -33,5 +33,3 @@ const MapPage: FC = () => {
     </MapContainer>
   );
 };
-
-export default MapPage;

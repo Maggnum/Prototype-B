@@ -74,7 +74,7 @@ const modalCloseStyle = {
   transition: "0.2s",
 };
 
-const EmployeeCard: FC<employee> = (employee: employee) => {
+export const EmployeeCard: FC<employee> = (employee: employee) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -160,5 +160,3 @@ const EmployeeCard: FC<employee> = (employee: employee) => {
     </>
   );
 };
-
-export default EmployeeCard;
