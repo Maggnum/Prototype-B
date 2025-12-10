@@ -1,31 +1,42 @@
 import { createBrowserRouter } from "react-router";
-import { fetchEmployees } from "./api";
 import { Homepage } from "./components/Homepage/homepage";
 import { App } from "./App";
 import { EmployeesPage } from "./components/EmployeesPage/employeesPage";
+import { fetchEmployees } from "./services";
+import { ErrorPage } from "./components/ErrorPage/errorPage";
+import { LoadingPage } from "./components/LoadingPage copy/loadingPage";
 import { MapPage } from "./components/MapPage/mapPage";
 
 const route = {
   path: "/",
   Component: App,
   children: [
+    { index: true, Component: Homepage },
     {
-      path: "/",
-      Component: Homepage,
-    },
-    {
-      path: "/employees",
-      Component: EmployeesPage,
+      path: "employees",
+      Component: LoadingPage,
       loader: fetchEmployees,
+      ErrorBoundary: ErrorPage,
+      children: [
+        {
+          index: true,
+          Component: EmployeesPage,
+        },
+      ],
     },
     {
       path: "/map",
       Component: MapPage,
       loader: fetchEmployees,
+      ErrorBoundary: ErrorPage,
+      children: [
+        {
+          index: true,
+          Component: EmployeesPage,
+        },
+      ],
     },
   ],
 };
 
-const router = createBrowserRouter([route]);
-
-export default router;
+export const router = createBrowserRouter([route]);
