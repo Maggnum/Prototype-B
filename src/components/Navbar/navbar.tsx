@@ -3,6 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import AdsClickIcon from "@mui/icons-material/AdsClick";
 import type { SxProps } from "@mui/material";
+import type { FC } from "react";
 
 const navbarStyle: SxProps = {
   backgroundColor: "rgba(20, 20, 20, 0.9)",
@@ -30,7 +31,7 @@ const itemStyle: SxProps = {
   },
 };
 
-export const Navbar = () => {
+export const Navbar: FC = () => {
   return (
     <AppBar position="sticky" elevation={0} sx={navbarStyle}>
       <Toolbar sx={toolbarStyle}>
