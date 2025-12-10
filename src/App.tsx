@@ -1,4 +1,4 @@
-import Homepage from "./components/Homepage/homepage";
+import { Homepage } from "./components/Homepage/homepage";
 import { Navbar } from "./components/Navbar/navbar";
 
 function App() {
