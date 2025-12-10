@@ -1,12 +1,9 @@
-import {
-  createBrowserRouter,
-  // UNSAFE_WithHydrateFallbackProps,
-} from "react-router";
-import Homepage from "./components/Homepage/homepage";
-import App from "./App";
-import EmployeesPage from "./components/EmployeesPage/employeesPage";
+import { createBrowserRouter } from "react-router";
 import { fetchEmployees } from "./api";
-import MapPage from "./components/MapPage/mapPage";
+import { Homepage } from "./components/Homepage/homepage";
+import { App } from "./App";
+import { EmployeesPage } from "./components/EmployeesPage/employeesPage";
+import { MapPage } from "./components/MapPage/mapPage";
 
 const route = {
   path: "/",

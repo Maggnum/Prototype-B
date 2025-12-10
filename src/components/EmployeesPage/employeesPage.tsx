@@ -1,11 +1,11 @@
 import type { FC } from "react";
-import EmployeeCard from "./employeeCard";
+import { EmployeeCard } from "./employeeCard";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import type { employee } from "./types";
 import { useLoaderData } from "react-router";
 
-const EmployeesPage: FC = () => {
+export const EmployeesPage: FC = () => {
   const employees = useLoaderData();
 
   return (
@@ -27,5 +27,3 @@ const EmployeesPage: FC = () => {
     </Container>
   );
 };
-
-export default EmployeesPage;

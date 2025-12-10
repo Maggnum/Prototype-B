@@ -1,6 +1,6 @@
 import "./homepage.css";
 
-const Homepage = () => {
+export const Homepage = () => {
   return (
     <div id="homepage">
       <img src="src/assets/Image.jpg" alt="image" />
@@ -9,5 +9,3 @@ const Homepage = () => {
     </div>
   );
 };
-
-export default Homepage;
