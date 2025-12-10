@@ -2,13 +2,11 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import type { FC } from "react";
-import type { employee } from "../../modules/employee";
-
-import * as React from "react";
-import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { CardActionArea } from "@mui/material";
+import Box from "@mui/material/Box";
+import CardActionArea from "@mui/material/CardActionArea";
+import { useState, type FC } from "react";
+import type { employee } from "../../modules/employee";
 
 const cardStyle = {
   maxWidth: 300,
@@ -75,10 +73,10 @@ const modalCloseStyle = {
 };
 
 export const EmployeeCard: FC<employee> = (employee: employee) => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
   return (
     <>
       {/* CARD */}
