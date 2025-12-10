@@ -6,3 +6,8 @@ export const api = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+export const fetchEmployees = async () => {
+  const { data } = await api.get("/employees");
+  return data;
+};

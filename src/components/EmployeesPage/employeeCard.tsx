@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import type { employee } from "./types";
+import type { employee } from "../../modules/employee";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -74,10 +74,11 @@ const modalCloseStyle = {
   transition: "0.2s",
 };
 
-const EmployeeCard: FC<employee> = (employee: employee) => {
+export const EmployeeCard: FC<employee> = (employee: employee) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
   return (
     <>
       {/* CARD */}
@@ -160,5 +161,3 @@ const EmployeeCard: FC<employee> = (employee: employee) => {
     </>
   );
 };
-
-export default EmployeeCard;

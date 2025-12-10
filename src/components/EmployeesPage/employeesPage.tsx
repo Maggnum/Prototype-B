@@ -1,12 +1,12 @@
 import type { FC } from "react";
-import EmployeeCard from "./employeeCard";
+import { EmployeeCard } from "./employeeCard";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import type { employee } from "./types";
-import { useLoaderData } from "react-router";
+import type { employee } from "../../modules/employee";
+import { useOutletContext } from "react-router";
 
-const EmployeesPage: FC = () => {
-  const employees = useLoaderData();
+export const EmployeesPage: FC = () => {
+  const employees: employee[] = useOutletContext();
 
   return (
     <Container sx={{ py: 4 }}>
@@ -27,5 +27,3 @@ const EmployeesPage: FC = () => {
     </Container>
   );
 };
-
-export default EmployeesPage;
