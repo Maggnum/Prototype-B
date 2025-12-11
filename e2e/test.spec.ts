@@ -1,8 +1,15 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, Page } from "@playwright/test";
+
+const goToHomePage = async (page: Page) =>
+  await page.getByRole("link", { name: "Home" }).click();
+const goToEmployeePage = async (page: Page) =>
+  await page.getByRole("link", { name: "Employees" }).click();
+const goToMapPage = async (page: Page) =>
+  await page.getByRole("link", { name: "Map" }).click();
 
 test.describe.configure({ mode: "parallel" });
 
-test.beforeAll(async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.goto("http://localhost:5173/");
 });
 
@@ -12,23 +19,23 @@ test.describe("home page", () => {
   });
 
   test("navbar", async ({ page }) => {
-    await page.getByRole("link", { name: "Employees" }).click();
+    await goToEmployeePage(page);
     await expect.soft(page).toHaveURL("http://localhost:5173/employees");
-    await page.getByRole("link", { name: "Map" }).click();
+    await goToMapPage(page);
     await expect.soft(page).toHaveURL("http://localhost:5173/map");
-    await page.getByRole("link", { name: "Home" }).click();
+    await goToHomePage(page);
     await expect(page).toHaveURL("http://localhost:5173/");
   });
 });
 
 test.describe("employee page", () => {
   test("all employee cards visible", async ({ page }) => {
-    await page.getByRole("link", { name: "Employees" }).click();
+    await goToEmployeePage(page);
     await expect(page.locator("div.MuiCard-root img[alt]")).toHaveCount(9);
   });
 
   test("employee modal", async ({ page }) => {
-    await page.getByRole("link", { name: "Employees" }).click();
+    await goToEmployeePage(page);
     await page
       .getByRole("button", { name: "Andrew Fuller Andrew Fuller" })
       .click();
@@ -42,9 +49,13 @@ test.describe("employee page", () => {
 
 test.describe("map page", () => {
   test("employee marker and popup", async ({ page }) => {
-    await page.getByRole("link", { name: "Map" }).click();
-    for (let index = 0; index < 20; index++) {
-      await page.getByRole("button", { name: "Zoom out" }).click();
+    await goToMapPage(page);
+    await page.waitForResponse("**/v1/city/?name=**");
+
+    while (await page.getByRole("button", { name: "Zoom out" }).isEnabled()) {
+      await page
+        .getByRole("button", { name: "Zoom out" })
+        .click({ force: true });
     }
 
     await page.getByRole("button", { name: "Marker" }).nth(4).click();
