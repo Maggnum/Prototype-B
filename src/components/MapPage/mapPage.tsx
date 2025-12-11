@@ -4,8 +4,8 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapPage.css";
 import iconImg from "../../assets/icon.png";
-import { useLoaderData } from "react-router";
-import useEmployeeMarker from "./useEmployeeMarker";
+import { useOutletContext } from "react-router";
+import { useEmployeeMarker } from "./useEmployeeMarker";
 import type { employee } from "../../modules";
 
 const ISRAEL_COORDINATES: LatLngExpression = { lat: 31.4061, lng: 34.8516 };
@@ -17,7 +17,7 @@ const icon = new Icon({
 });
 
 export const MapPage: FC = () => {
-  const employees: employee[] = useLoaderData();
+  const employees: employee[] = useOutletContext();
   const { markers } = useEmployeeMarker(employees);
 
   return (

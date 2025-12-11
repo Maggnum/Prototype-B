@@ -3,7 +3,8 @@ import { Outlet, useLoaderData } from "react-router";
 import "./loadingPage.css";
 
 export const LoadingPage: FC = () => {
-  const data = useLoaderData();
+  const data: unknown = useLoaderData();
+
   if (data) {
     return <Outlet context={data} />;
   } else

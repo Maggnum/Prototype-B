@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import "./errorPage.css";
 import { isRouteErrorResponse, useRouteError } from "react-router";
+
 export const ErrorPage: FC = () => {
   const error = useRouteError();
   if (isRouteErrorResponse(error)) {

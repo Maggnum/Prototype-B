@@ -1,6 +1,7 @@
+import type { FC } from "react";
 import "./homepage.css";
 
-export const Homepage = () => {
+export const Homepage: FC = () => {
   return (
     <div id="homepage">
       <img src="src/assets/Image.jpg" alt="image" />
