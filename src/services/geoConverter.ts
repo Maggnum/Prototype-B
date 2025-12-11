@@ -13,5 +13,5 @@ export const fetchPosition = async (
   city: string
 ): Promise<LatLngExpression> => {
   const { data } = await geoApi.get(`?name=${city}`);
-  return [data[0].latitude, data[0].longitude];
+  return { lat: data[0].latitude, lng: data[0].longitude };
 };
