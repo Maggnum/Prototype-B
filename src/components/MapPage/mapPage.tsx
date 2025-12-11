@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import "./mapPage.css";
 import iconImg from "../../assets/icon.png";
 import { useOutletContext } from "react-router";
-import useEmployeeMarker from "./useEmployeeMarker";
+import { useEmployeeMarker } from "./useEmployeeMarker";
 import type { employee } from "../../modules";
 
 const ISRAEL_COORDINATES: LatLngExpression = { lat: 31.4061, lng: 34.8516 };

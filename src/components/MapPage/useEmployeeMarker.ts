@@ -8,7 +8,7 @@ interface marker {
   popup: string;
 }
 
-const useEmployeeMarker = (employees: employee[]) => {
+export const useEmployeeMarker = (employees: employee[]) => {
   const [markers, setMarkers] = useState<marker[]>();
 
   useEffect(() => {
@@ -48,5 +48,3 @@ const useEmployeeMarker = (employees: employee[]) => {
 
   return { markers };
 };
-
-export default useEmployeeMarker;
