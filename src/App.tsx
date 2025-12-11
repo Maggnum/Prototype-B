@@ -1,13 +1,12 @@
-import { Homepage } from "./components/Homepage/homepage";
+import { Outlet } from "react-router";
 import { Navbar } from "./components/Navbar/navbar";
+import type { FC } from "react";
 
-function App() {
+export const App: FC = () => {
   return (
     <>
       <Navbar />
-      <Homepage />
+      <Outlet />
     </>
   );
-}
-
-export default App;
+};
