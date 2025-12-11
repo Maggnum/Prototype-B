@@ -17,11 +17,11 @@ const useEmployeeMarker = (employees: employee[]) => {
 
       // Group by city
       const cityGroups = new Map<string, employee[]>();
-      employees.forEach((emp) => {
-        if (!cityGroups.has(emp.city)) {
-          cityGroups.set(emp.city, []);
+      employees.forEach((employee) => {
+        if (!cityGroups.has(employee.city)) {
+          cityGroups.set(employee.city, []);
         }
-        cityGroups.get(emp.city)!.push(emp);
+        cityGroups.get(employee.city)!.push(employee);
       });
 
       // Create single marker per city
@@ -33,7 +33,7 @@ const useEmployeeMarker = (employees: employee[]) => {
             return {
               position,
               popup: groupedEmployees
-                .map((e) => `${e.firstName} ${e.lastName}`)
+                .map((employee) => `${employee.firstName} ${employee.lastName}`)
                 .join(", "),
             };
           }

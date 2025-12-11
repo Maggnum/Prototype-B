@@ -6,8 +6,9 @@ import "./mapPage.css";
 import iconImg from "../../assets/icon.png";
 import { useLoaderData } from "react-router";
 import useEmployeeMarker from "./useEmployeeMarker";
+import type { employee } from "../../modules";
 
-const ISRAEL_CORDINETS: LatLngExpression = [31.4061, 34.8516];
+const ISRAEL_COORDINATES: LatLngExpression = { lat: 31.4061, lng: 34.8516 };
 const MAP_ZOOM = 8;
 
 const icon = new Icon({
@@ -16,11 +17,11 @@ const icon = new Icon({
 });
 
 export const MapPage: FC = () => {
-  const employees = useLoaderData();
+  const employees: employee[] = useLoaderData();
   const { markers } = useEmployeeMarker(employees);
 
   return (
-    <MapContainer center={ISRAEL_CORDINETS} zoom={MAP_ZOOM}>
+    <MapContainer center={ISRAEL_COORDINATES} zoom={MAP_ZOOM}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
