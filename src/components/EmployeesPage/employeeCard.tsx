@@ -7,8 +7,9 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { useState, type FC } from "react";
 import type { employee } from "../../modules/employee";
+import type { SxProps } from "@mui/material";
 
-const cardStyle = {
+const cardStyle: SxProps = {
   maxWidth: 300,
   backgroundColor: "rgba(20, 20, 20, 0.9)",
   borderRadius: 3,
@@ -20,7 +21,7 @@ const cardStyle = {
     boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
   },
 };
-const modalStyle = {
+const modalStyle: SxProps = {
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -34,12 +35,12 @@ const modalStyle = {
   color: "white",
 };
 
-const imgStyle = {
+const imgStyle: SxProps = {
   height: "100%",
   objectFit: "cover",
 };
 
-const modalImgStyle = {
+const modalImgStyle: SxProps = {
   width: "100%",
   height: 260,
   borderRadius: 2,
@@ -47,20 +48,24 @@ const modalImgStyle = {
   mb: 2,
 };
 
-const contentStyle = { textAlign: "center", px: 2, py: 2 };
+const contentStyle: SxProps = { textAlign: "center", px: 2, py: 2 };
 
-const nameStyle = { color: "rgb(255,255,255)", fontWeight: 600 };
-const titleStyle = { color: "rgb(155, 155, 155)", mb: 1, fontStyle: "italic" };
-const modalNameStyle = { fontWeight: 700, textAlign: "center" };
-const modalTitleStyle = {
+const nameStyle: SxProps = { color: "rgb(255,255,255)", fontWeight: 600 };
+const titleStyle: SxProps = {
+  color: "rgb(155, 155, 155)",
+  mb: 1,
+  fontStyle: "italic",
+};
+const modalNameStyle: SxProps = { fontWeight: 700, textAlign: "center" };
+const modalTitleStyle: SxProps = {
   textAlign: "center",
   fontStyle: "italic",
   color: "rgb(180,180,180)",
   mb: 2,
 };
-const modalLocationStyle = { mb: 1, color: "rgb(200,200,200)" };
-const modalBirthdayStyle = { mb: 1, color: "rgb(200,200,200)" };
-const modalDetailsStyle = { color: "rgb(160,160,160)", mt: 2 };
+const modalLocationStyle: SxProps = { mb: 1, color: "rgb(200,200,200)" };
+const modalBirthdayStyle: SxProps = { mb: 1, color: "rgb(200,200,200)" };
+const modalDetailsStyle: SxProps = { color: "rgb(160,160,160)", mt: 2 };
 const modalCloseStyle = {
   background: "transparent",
   border: "1px solid rgb(120,120,120)",
