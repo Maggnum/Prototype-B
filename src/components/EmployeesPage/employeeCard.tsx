@@ -2,9 +2,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import CardActionArea from "@mui/material/CardActionArea";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import CardActionArea from "@mui/material/CardActionArea";
 import { useState, type FC } from "react";
 import type { employee } from "../../modules/employee";
 
@@ -20,7 +20,6 @@ const cardStyle = {
     boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
   },
 };
-
 const modalStyle = {
   position: "absolute",
   top: "50%",
