@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import type { employee } from "../EmployeesPage/types";
+import type { employee } from "../../modules";
 import type { LatLngExpression } from "leaflet";
-import { fetchPosition } from "../../api/geoConverter";
+import { fetchPosition } from "../../services";
 
 interface marker {
   position: LatLngExpression;
